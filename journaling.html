@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm Cradle Journal</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Your Self-Care Journal</h1>
+        <p>“Take time for yourself, because you deserve it!”</p>
+    </header>
+
+    <!-- Journal Entry Form -->
+    <section id="journal-entry">
+        <h2>Log Your Daily Self-Care</h2>
+        <form id="entryForm">
+            <label for="selfCareActivity">What did you do for self-care today?</label>
+            <textarea id="selfCareActivity" placeholder="E.g., Took a walk, had a relaxing bath, read a book" required></textarea>
+            
+            <label for="mood">How did you feel?</label>
+            <select id="mood">
+                <option value="happy">😊 Happy</option>
+                <option value="calm">😌 Calm</option>
+                <option value="energized">😃 Energized</option>
+                <option value="relaxed">🧘 Relaxed</option>
+            </select>
+
+            <button type="button" onclick="addEntry()">Add Entry</button>
+        </form>
+    </section>
+
+    <!-- Self-Care Streak -->
+    <section id="streak">
+        <h2>Your Self-Care Streak</h2>
+        <p>Days in a row: <span id="streakCounter">0</span></p>
+    </section>
+
+    <!-- Past Entries Section -->
+    <section id="past-entries">
+        <h2>Your Past Self-Care Activities</h2>
+        <div id="entries"></div>
+    </section>
+
+    <script >let streakCounter = 0;
+        let entries = [];
+        
+        // Function to add a new entry
+        function addEntry() {
+            const activity = document.getElementById('selfCareActivity').value;
+            const mood = document.getElementById('mood').value;
+        
+            if (activity !== "") {
+                const entry = {
+                    date: new Date().toLocaleDateString(),
+                    activity: activity,
+                    mood: mood
+                };
+        
+                entries.push(entry);
+                displayEntries();
+                updateStreak();
+                clearForm();
+            } else {
+                alert("Please enter a self-care activity.");
+            }
+        }
+        
+        // Function to display the entries
+        function displayEntries() {
+            const entriesDiv = document.getElementById('entries');
+            entriesDiv.innerHTML = "";
+        
+            entries.forEach(entry => {
+                const entryElement = document.createElement('div');
+                entryElement.classList.add('entry');
+                entryElement.innerHTML = <strong>${entry.date}</strong>: ${entry.activity} <br> Mood: ${entry.mood};
+                entriesDiv.appendChild(entryElement);
+            });
+        }
+        
+        // Function to update streak
+        function updateStreak() {
+            streakCounter++;
+            document.getElementById('streakCounter').innerText = streakCounter;
+        }
+        
+        // Function to clear the form after submission
+        function clearForm() {
+            document.getElementById('selfCareActivity').value = "";
+            document.getElementById('mood').selectedIndex = 0;
+        }</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Sessions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f4f8; 
+        }
+        #parent {
+            background-color: #f8f9fa;
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .card {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border: none;
+            transition: transform 0.2s ease-in-out;
+            margin: 10px; 
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-title {
+            color: #007bff;
+        }
+        .card-text {
+            color: #343a40;
+        }
+        #one .card-body {
+            background-color: #d1e7dd; 
+        }
+        #two .card-body {
+            background-color: #f8d7da; 
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+        #one, #two {
+            flex-basis: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: #343a40; padding: 30px 0;">
+        <div id="parent" class="d-flex justify-content-between align-items-center flex-wrap">
+
+            <div id="one">
+                <div class="card" style="width: 18rem;">
+                    <img src="final online community.webp" class="card-img-top" alt="online session">
+                    <div class="card-body">
+                        <h5 class="card-title"><u>Online</u></h5>
+                        <p class="card-text"><b>Your path to wellness starts here. Convenient, Compassionate Online therapy</b></p>
+                        <a href="online.html" class="btn btn-primary">Book today</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="two">
+                <div class="card" style="width: 18rem;">
+                    <img src="community offline.jpg" class="card-img-top" alt="offline session">
+                    <div class="card-body">
+                        <h5 class="card-title"><u>Offline</u></h5>
+                        <p class="card-text"><b>Helping you heal, one step at a time - In-person therapy</b></p>
+                        <a href="offline.html" class="btn btn-primary">Book your seat</a>
+                    </div>
+                </div>
+              
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <p style="font-size: 200%; text-align: center; color: rgb(33, 33, 28);">We offer both online and offline therapy options to support your mental health journey. Choose online sessions for convenience and privacy, or opt for in-person therapy for a more personal touch. Join a community of individuals dedicated to healing, where you can connect, share, and grow together.</p>
+</body>
+</html>
